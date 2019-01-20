@@ -18,21 +18,20 @@
     <div id="app"></div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
+    <script id="user.html" type="text/html">
+      <div>name: {{ name }}, age: {{ age }}</div>
+    </script>
+    <script id="app.html" type="text/html">
+      <v-app>
+        <v-content>
+          <v-container>
+            Hello world, <user />
+          </v-container>
+        </v-content>
+      </v-app>
+    </script>
     <script type="module">
-      import User from "./User.js";
-      const App = {
-        name: "App",
-        components: { User },
-        template: `
-          <v-app>
-            <v-content>
-              <v-container>
-                Hello world, <user/>
-                </v-container>
-            </v-content>
-          </v-app>`
-      };
-
+      import App from "./App.js";
       new Vue({ render: h => h(App) }).$mount(`#app`);
     </script>
   </body>

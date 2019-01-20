@@ -1,6 +1,6 @@
 export default {
   name: "User",
-  template: `<div>name: {{ name }}, age: {{ age }}</div>`,
+  template: document.getElementById("user.html").innerHTML,
   data() {
     return {
       name: "tmtk75",
