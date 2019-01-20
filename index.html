@@ -6,6 +6,10 @@
       rel="stylesheet"
     />
     <link
+      href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+      rel="stylesheet"
+    />
+    <link
       href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css"
       rel="stylesheet"
     />
@@ -14,22 +18,64 @@
       content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui"
     />
   </head>
+  <style>
+    .icon {
+      font-size: 2rem;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+    }
+    .icon.twitter:hover { color: #4099ff; }
+    .icon.github:hover { color: #000; }
+    .icon.facebook:hover { color: #3b5998; }
+    .icon.linkedin:hover { color: #4875b4; }
+  </style>
   <body>
     <div id="app"></div>
+
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
+
     <script id="user.html" type="text/html">
       <div>name: {{ name }}, age: {{ age }}</div>
     </script>
+
     <script id="app.html" type="text/html">
       <v-app>
+        <v-navigation-drawer v-model="drawer" :permanent="drawer" width="220" app>
+          <v-list>
+            <v-list-tile v-for="(item) in items">
+              <v-list-tile-action>
+                <v-icon v-html="item.icon"/>
+              </v-list-tile-action>
+              <v-list-tile-content>
+                <v-list-tile-title>{{ item.text }}</v-list-tile-title>
+              </v-list-tile-content>
+            </v-list-tile>
+          </v-list>
+        </v-navigation-drawer>
+
+        <v-toolbar class="toolbar" flat fixed dense app>
+          <v-toolbar-side-icon @click="drawer = !drawer"/>
+        </v-toolbar>
+
         <v-content>
           <v-container>
             Hello world, <user />
           </v-container>
         </v-content>
+
+        <v-footer inset app>
+          <v-layout align-center justify-center row>
+            <v-icon class="icon twitter">fab fa-twitter-square</v-icon>
+            <v-icon class="icon github">fab fa-github-square</v-icon>
+            <span>copyright 2019</span>
+            <v-icon class="icon facebook">fab fa-facebook-square</v-icon>
+            <v-icon class="icon linkedin">fab fa-linkedin</v-icon>
+          </v-layout>
+        </v-footer>
       </v-app>
     </script>
+
     <script type="module">
       import App from "./App.js";
       new Vue({ render: h => h(App) }).$mount(`#app`);
