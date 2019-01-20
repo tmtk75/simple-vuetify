@@ -1,0 +1,17 @@
+.icon {
+  font-size: 2rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+.icon.twitter:hover {
+  color: #4099ff;
+}
+.icon.github:hover {
+  color: #000;
+}
+.icon.facebook:hover {
+  color: #3b5998;
+}
+.icon.linkedin:hover {
+  color: #4875b4;
+}

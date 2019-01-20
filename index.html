@@ -13,22 +13,12 @@
       href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css"
       rel="stylesheet"
     />
+    <link href="mystyle.css" rel="stylesheet" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui"
     />
   </head>
-  <style>
-    .icon {
-      font-size: 2rem;
-      margin-left: 0.5rem;
-      margin-right: 0.5rem;
-    }
-    .icon.twitter:hover { color: #4099ff; }
-    .icon.github:hover { color: #000; }
-    .icon.facebook:hover { color: #3b5998; }
-    .icon.linkedin:hover { color: #4875b4; }
-  </style>
   <body>
     <div id="app"></div>
 
@@ -64,13 +54,13 @@
           </v-container>
         </v-content>
 
-        <v-footer inset app>
+        <v-footer inset app fill-height>
           <v-layout align-center justify-center row>
             <v-icon class="icon twitter">fab fa-twitter-square</v-icon>
             <v-icon class="icon github">fab fa-github-square</v-icon>
-            <span>copyright 2019</span>
             <v-icon class="icon facebook">fab fa-facebook-square</v-icon>
             <v-icon class="icon linkedin">fab fa-linkedin</v-icon>
+            <span>copyright 2019</span>
           </v-layout>
         </v-footer>
       </v-app>
