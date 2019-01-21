@@ -15,3 +15,7 @@
 .icon.linkedin:hover {
   color: #4875b4;
 }
+
+.template {
+  display: none;
+}
