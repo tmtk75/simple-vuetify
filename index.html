@@ -1,85 +1,74 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link
-      href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
-      rel="stylesheet"
-    />
-    <link href="//cdn.materialdesignicons.com/4.2.95/css/materialdesignicons.min.css" rel="stylesheet" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css"
-      rel="stylesheet"
-    />
-    <link href="mystyle.css" rel="stylesheet" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui"
-    />
-  </head>
-  <body>
-    <div id="app"></div>
 
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
+<head>
+  <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet" />
+  <link href="//cdn.materialdesignicons.com/4.2.95/css/materialdesignicons.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css" rel="stylesheet" />
+  <link href="mystyle.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui" />
+</head>
 
-    <div id="user.html" class="template">
-      <div>name: {{ name }}, age: {{ age }}</div>
-    </div>
+<body>
+  <div id="app"></div>
 
-    <div id="app.html" class="template">
-      <v-app>
-        <v-navigation-drawer
-          v-model="drawer"
-          :permanent="drawer"
-          width="220"
-          app
-        >
-          <v-list dense>
-            <v-list-item v-for="(item, idx) in items" :key="idx" @click="">
-              <v-list-item-action>
-                <v-icon v-html="item.icon"></v-icon>
-              </v-list-item-action>
-              <v-list-item-content>
-                <v-list-item-title>{{ item.text }}</v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
-          </v-list>
-        </v-navigation-drawer>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
 
-        <v-app-bar flat fixed dense app>
-          <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-        </v-app-bar>
+  <div id="user.html" class="template">
+    <div>name: {{ name }}, age: {{ age }}</div>
+  </div>
 
-        <v-content>
-          <v-container>
-              <user></user>
-              <v-text-field flat outlined></v-text-field>
-              <v-btn>save</v-btn>
-          </v-container>
-        </v-content>
+  <div id="app.html" class="template">
+    <v-app>
+      <v-navigation-drawer v-model="drawer" :permanent="drawer" width="220" app>
+        <v-list dense>
+          <v-list-item v-for="(item, idx) in items" :key="idx" @click="">
+            <v-list-item-action>
+              <v-icon v-html="item.icon"></v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>{{ item.text }}</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list>
+      </v-navigation-drawer>
 
-        <v-footer inset app fill-height>
-          <v-layout align-center justify-center row>
-            <v-icon class="icon twitter">fab fa-twitter-square</v-icon>
-            <v-icon class="icon github">fab fa-github-square</v-icon>
-            <v-icon class="icon facebook">fab fa-facebook-square</v-icon>
-            <v-icon class="icon linkedin">fab fa-linkedin</v-icon>
-            <span>copyright 2019</span>
-          </v-layout>
-        </v-footer>
-      </v-app>
-    </div>
+      <v-app-bar flat fixed dense app>
+        <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+      </v-app-bar>
 
-    <script type="module">
-      import App from "./App.js";
-      new Vue({
-        vuetify: new Vuetify({
-          theme: { dark: false },
-          icons: { iconfont: 'mdi' },
-        }),
-        render: h => h(App),
-      })
-      .$mount(`#app`);
-    </script>
-  </body>
+      <v-content>
+        <v-container>
+          <user></user>
+          <v-text-field flat outlined></v-text-field>
+          <v-btn>save</v-btn>
+        </v-container>
+      </v-content>
+
+      <v-footer inset app fill-height>
+        <v-layout align-center justify-center row>
+          <v-icon class="icon twitter">fab fa-twitter-square</v-icon>
+          <v-icon class="icon github">fab fa-github-square</v-icon>
+          <v-icon class="icon facebook">fab fa-facebook-square</v-icon>
+          <v-icon class="icon linkedin">fab fa-linkedin</v-icon>
+          <span>copyright 2019</span>
+        </v-layout>
+      </v-footer>
+    </v-app>
+  </div>
+
+  <script type="module">
+    import App from "./App.js";
+    new Vue({
+      vuetify: new Vuetify({
+        theme: { dark: false },
+        icons: { iconfont: 'mdi' },
+      }),
+      render: h => h(App),
+    })
+    .$mount(`#app`);
+  </script>
+</body>
+
 </html>
