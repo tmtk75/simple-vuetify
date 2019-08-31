@@ -9,6 +9,7 @@
       href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
       rel="stylesheet"
     />
+    <link href="//cdn.materialdesignicons.com/4.2.95/css/materialdesignicons.min.css" rel="stylesheet" />
     <link
       href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css"
       rel="stylesheet"
@@ -38,20 +39,20 @@
           app
         >
           <v-list>
-            <v-list-tile v-for="(item) in items">
-              <v-list-tile-action>
+            <v-list-item v-for="(item, idx) in items" :key="idx">
+              <v-list-item-action>
                 <v-icon v-html="item.icon"></v-icon>
-              </v-list-tile-action>
-              <v-list-tile-content>
-                <v-list-tile-title>{{ item.text }}</v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>
+              </v-list-item-action>
+              <v-list-item-content>
+                <v-list-item-title>{{ item.text }}</v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
           </v-list>
         </v-navigation-drawer>
 
-        <v-toolbar class="toolbar" flat fixed dense app>
-          <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon>
-        </v-toolbar>
+        <v-app-bar flat fixed dense app>
+          <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+        </v-app-bar>
 
         <v-content>
           <v-container> Hello world, <user></user> </v-container>
@@ -71,7 +72,14 @@
 
     <script type="module">
       import App from "./App.js";
-      new Vue({ render: h => h(App) }).$mount(`#app`);
+      new Vue({
+        vuetify: new Vuetify({
+          theme: { dark: false },
+          icons: { iconfont: 'mdi' },
+        }),
+        render: h => h(App),
+      })
+      .$mount(`#app`);
     </script>
   </body>
 </html>
