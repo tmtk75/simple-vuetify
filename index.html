@@ -40,9 +40,20 @@
 
       <v-content>
         <v-container>
-          <user></user>
-          <v-text-field flat outlined></v-text-field>
-          <v-btn>save</v-btn>
+          <v-row>
+            <user></user>
+          </v-row>
+          <v-row>
+            <v-col cols="8">
+              <v-text-field flat outlined></v-text-field>
+            </v-col>
+            <v-col cols="4">
+              <v-btn>save</v-btn>
+            </v-col>
+          </v-row>
+          <v-row>
+            <a href="https://github.com/tmtk75/simple-vuetify">https://github.com/tmtk75/simple-vuetify</a>
+          </v-row>
         </v-container>
       </v-content>
 
@@ -67,7 +78,7 @@
       }),
       render: h => h(App),
     })
-    .$mount(`#app`);
+      .$mount(`#app`);
   </script>
 </body>
 
