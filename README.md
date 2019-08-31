@@ -7,3 +7,5 @@ $ python3 -m http.server .
 ```
 
 Open <http://localhost:8000>.
+
+Or visit <https://tmtk75.github.io/simple-vuetify/>
