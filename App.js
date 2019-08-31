@@ -7,7 +7,7 @@ export default {
   data() {
     return {
       drawer: true,
-      items: [{ icon: "account_box", text: "account" }]
+      items: [{ icon: "mdi-account", text: "account" }]
     };
   }
 };

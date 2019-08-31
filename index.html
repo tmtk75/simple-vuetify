@@ -2,10 +2,6 @@
 <html>
   <head>
     <link
-      href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons"
-      rel="stylesheet"
-    />
-    <link
       href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
       rel="stylesheet"
     />
@@ -38,8 +34,8 @@
           width="220"
           app
         >
-          <v-list>
-            <v-list-item v-for="(item, idx) in items" :key="idx">
+          <v-list dense>
+            <v-list-item v-for="(item, idx) in items" :key="idx" @click="">
               <v-list-item-action>
                 <v-icon v-html="item.icon"></v-icon>
               </v-list-item-action>
